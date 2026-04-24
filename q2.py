@@ -20,10 +20,13 @@ def pad_word_count(essay):
     new_essay = essay
 
     #### START REPLACING CODE HERE
-    new_essay = new_essay.replace("n't", " not")
-    new_essay = new_essay.replace("'s'", " is")
-    new_essay = new_essay.replace("'re'", " are")
-    new_essay = new_essay.replace("'ve'", " have")
+    contractions = {
+        "n't": " not",
+        "'s": " is",
+        "'re": " are",
+        "'ve": " have",}
+    for contraction, expansion in contractions.items():
+        new_essay = new_essay.replace(contraction, expansion)
     #### STOP REPLACING CODE HERE
 
     return new_essay
